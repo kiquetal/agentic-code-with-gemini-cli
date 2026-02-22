@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "plantuml": {
+      "command": "npx",
+      "args": [
+        "plantuml-mcp-server"
+      ]
+    }
+  }
+}
