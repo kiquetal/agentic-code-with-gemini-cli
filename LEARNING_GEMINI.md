@@ -72,11 +72,19 @@ You can select or switch models using these methods:
     ```bash
     /model
     ```
--   **Configuration**: Set the default model in your settings:
+-   **Configuration**: Manage standard settings using the interactive menu:
     ```bash
-    gemini-cli config set model.name gemini-3-pro-preview
+    /settings
     ```
--   **Preview Features**: Enable "Preview Features" to have the `auto` setting resolve to Gemini 3 Pro by default.
+-   **Preview Features**: To enable preview features (required for Gemini 3 access), manually edit your settings file (`~/.gemini/settings.json` for global or `.gemini/settings.json` for the workspace) to include:
+    ```json
+    {
+      "experimental": {
+        "previewFeatures": true
+      }
+    }
+    ```
+    Once enabled, the `auto` setting will resolve to Gemini 3 Pro by default.
 
 ---
 
@@ -89,7 +97,10 @@ You can select or switch models using these methods:
     *   `gemini-cli diff`: Shows changes made by the AI.
     *   `gemini-cli status`: Summarizes the current state of the workspace.
 -   **Settings & Customization**:
-    *   `/settings`: Opens the interactive settings menu.
+    *   `/settings`: Opens the interactive settings editor for all configurations (Note: Use plural `/settings`; the singular `/setting` is not supported for feature management).
+    *   `/skills list`, `/skills enable <name>`: Manage Agent Skills.
+    *   `/hooks list`, `/hooks enable <name>`: Manage lifecycle hooks.
+    *   `/ide enable`: Toggle IDE integration.
 -   **Specialized Sub-Agents**:
     *   `codebase_investigator`: Use this for deep dives into unknown codebases.
     *   `cli_help`: Ask specific questions about Gemini CLI features.
