@@ -1,7 +1,12 @@
 @startuml NATS_JetStream_vs_Default
 !theme spacelab
 skinparam backgroundColor #f8f9fa
+skinparam DefaultFontColor #000000
+skinparam textFontColor #000000
 skinparam classFontColor #000000
+skinparam sequenceActorFontColor #000000
+skinparam sequenceParticipantFontColor #000000
+skinparam sequenceArrowFontColor #000000
 skinparam classBorderColor #4285F4
 skinparam arrowColor #4285F4
 skinparam handwritten true

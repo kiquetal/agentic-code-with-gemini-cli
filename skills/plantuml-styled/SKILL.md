@@ -17,7 +17,13 @@ All diagrams MUST follow these style parameters:
 !theme spacelab
 !option handwritten true
 skinparam backgroundColor #f8f9fa
+skinparam DefaultFontColor #000000
+skinparam textFontColor #000000
 skinparam classFontColor #000000
+skinparam sequenceActorFontColor #000000
+skinparam sequenceParticipantFontColor #000000
+skinparam sequenceArrowFontColor #000000
+skinparam noteFontColor #000000
 skinparam classBorderColor #4285F4
 skinparam arrowColor #4285F4
 ```
@@ -39,7 +45,13 @@ footer Co-authored by kiquetal
 !theme spacelab
 !option handwritten true
 skinparam backgroundColor #f8f9fa
+skinparam DefaultFontColor #000000
+skinparam textFontColor #000000
 skinparam classFontColor #000000
+skinparam sequenceActorFontColor #000000
+skinparam sequenceParticipantFontColor #000000
+skinparam sequenceArrowFontColor #000000
+skinparam noteFontColor #000000
 skinparam classBorderColor #4285F4
 skinparam arrowColor #4285F4
 
