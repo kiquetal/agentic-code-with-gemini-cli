@@ -8,6 +8,7 @@ skinparam classFontColor #000000
 skinparam sequenceActorFontColor #000000
 skinparam sequenceParticipantFontColor #000000
 skinparam sequenceArrowFontColor #000000
+skinparam noteFontColor #000000
 skinparam arrowColor #4285F4
 
 participant "Ampcode Client" as client

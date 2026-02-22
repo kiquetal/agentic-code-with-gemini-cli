@@ -1,0 +1,64 @@
+@startuml Osquery Architecture
+!theme spacelab
+!option handwritten true
+
+skinparam backgroundColor #f8f9fa
+skinparam DefaultFontColor #000000
+skinparam textFontColor #000000
+skinparam classFontColor #000000
+skinparam sequenceActorFontColor #000000
+skinparam sequenceParticipantFontColor #000000
+skinparam sequenceArrowFontColor #000000
+skinparam noteFontColor #000000
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+
+package "User Interface" {
+  [osqueryi (Interactive)] as shell
+  [osqueryd (Daemon)] as daemon
+}
+
+package "Osquery Core" {
+  [SQL Engine (SQLite)] as sql
+  [Virtual Table Registry] as registry
+}
+
+package "Virtual Tables" {
+  [Processes Table] as proc_table
+  [Users Table] as user_table
+  [Network Connections Table] as net_table
+}
+
+package "Operating System" {
+  [System APIs / Syscalls] as api
+  [Kernel / Artifacts] as kernel
+}
+
+shell --> sql : Execute SQL Query
+daemon --> sql : Scheduled Query
+
+sql --> registry : Lookup Table
+registry --> proc_table : Call implementation
+registry --> user_table
+registry --> net_table
+
+proc_table --> api : Query System State
+user_table --> api
+net_table --> api
+
+api --> kernel : Access Hardware/Data
+kernel --> api : Return Raw Data
+api --> proc_table : Formatted System Data
+proc_table --> registry : Row Results
+registry --> sql : Result Set
+sql --> shell : Formatted Output
+
+note right of sql
+  Osquery uses SQLite
+  but doesn't store data.
+  It queries the system
+  in real-time.
+end note
+
+footer Co-authored by kiquetal
+@enduml

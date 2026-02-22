@@ -92,6 +92,11 @@ footer Co-authored by kiquetal
 - **Purpose**: Illustrates interaction between Ampcode Client, .amprc.json configuration, MCP Server, and PlantUML Server
 - **Note**: Generated without footer text (PlantUML rendering optimization)
 
+#### Osquery Usage Diagram
+- **Location**: `/diagrams/osquery_usage.svg` (SVG) and `/diagrams/osquery_usage.png` (PNG)
+- **Description**: Architecture diagram explaining how osquery works
+- **Purpose**: Visualizes the flow from SQL queries to system APIs and raw data retrieval
+
 ---
 
 *Co-authored by kiquetal*
