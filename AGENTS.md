@@ -92,6 +92,11 @@ footer Co-authored by kiquetal
 - **Purpose**: Illustrates interaction between Ampcode Client, .amprc.json configuration, MCP Server, and PlantUML Server
 - **Note**: Generated without footer text (PlantUML rendering optimization)
 
+#### MCP Registration Diagram (Dark)
+- **Location**: `/diagrams/mcp-registration-dark.svg` (SVG) and `/diagrams/mcp-registration-dark.png` (PNG)
+- **Description**: Dark-themed sequence diagram showing MCP server registration flow
+- **Purpose**: High-contrast dark mode version of the MCP registration flow
+
 #### Osquery Usage Diagram
 - **Location**: `/diagrams/osquery_usage.svg` (SVG) and `/diagrams/osquery_usage.png` (PNG)
 - **Description**: Architecture diagram explaining how osquery works

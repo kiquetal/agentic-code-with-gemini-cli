@@ -1,0 +1,30 @@
+@startuml
+!theme spacelab
+!option handwritten true
+skinparam backgroundColor #212121
+skinparam DefaultFontColor #ffffff
+skinparam textFontColor #ffffff
+skinparam classFontColor #ffffff
+skinparam sequenceActorFontColor #ffffff
+skinparam sequenceParticipantFontColor #ffffff
+skinparam sequenceArrowFontColor #ffffff
+skinparam noteFontColor #ffffff
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+
+participant "Ampcode Client" as client
+participant ".amprc.json" as config
+participant "MCP Server" as mcp
+participant "PlantUML Server" as plantuml
+
+client -> config: Read configuration
+config -> client: Return MCP server path
+client -> mcp: Initialize MCP connection
+mcp -> client: Connection established
+client -> mcp: Request diagram generation
+mcp -> plantuml: Forward PlantUML code
+plantuml -> mcp: Generate SVG/PNG
+mcp -> client: Return generated diagram
+
+footer Co-authored by kiquetal
+@enduml
