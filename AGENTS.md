@@ -22,7 +22,9 @@ Generate diagrams in SVG, PNG, or PDF formats using PlantUML syntax via the conf
 
 ### Styling Guidelines
 
-All diagrams MUST follow these style parameters:
+Choose the appropriate theme based on the desired output.
+
+#### Light Mode (Default)
 
 ```
 !theme spacelab
@@ -35,6 +37,23 @@ skinparam sequenceActorFontColor #000000
 skinparam sequenceParticipantFontColor #000000
 skinparam sequenceArrowFontColor #000000
 skinparam noteFontColor #000000
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+```
+
+#### Dark Mode
+
+```
+!theme spacelab
+!option handwritten true
+skinparam backgroundColor #212121
+skinparam DefaultFontColor #ffffff
+skinparam textFontColor #ffffff
+skinparam classFontColor #ffffff
+skinparam sequenceActorFontColor #ffffff
+skinparam sequenceParticipantFontColor #ffffff
+skinparam sequenceArrowFontColor #ffffff
+skinparam noteFontColor #ffffff
 skinparam classBorderColor #4285F4
 skinparam arrowColor #4285F4
 ```

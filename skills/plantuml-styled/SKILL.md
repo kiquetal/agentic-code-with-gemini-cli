@@ -11,7 +11,9 @@ This skill ensures all PlantUML diagrams generated for the project adhere to a c
 
 ## Styling Guidelines
 
-All diagrams MUST follow these style parameters:
+Choose the appropriate theme based on the desired output.
+
+### Light Mode (Default)
 
 ```plantuml
 !theme spacelab
@@ -24,6 +26,23 @@ skinparam sequenceActorFontColor #000000
 skinparam sequenceParticipantFontColor #000000
 skinparam sequenceArrowFontColor #000000
 skinparam noteFontColor #000000
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+```
+
+### Dark Mode
+
+```plantuml
+!theme spacelab
+!option handwritten true
+skinparam backgroundColor #212121
+skinparam DefaultFontColor #ffffff
+skinparam textFontColor #ffffff
+skinparam classFontColor #ffffff
+skinparam sequenceActorFontColor #ffffff
+skinparam sequenceParticipantFontColor #ffffff
+skinparam sequenceArrowFontColor #ffffff
+skinparam noteFontColor #ffffff
 skinparam classBorderColor #4285F4
 skinparam arrowColor #4285F4
 ```
