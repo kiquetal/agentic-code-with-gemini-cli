@@ -1,5 +1,9 @@
 # Agents Configuration
 
+## Git Push Rules
+
+**RULE: Never push by yourself! Always wait for user confirmation before pushing.**
+
 ## MCP PlantUML Server
 
 This project uses the PlantUML MCP server for diagram generation through the Model Context Protocol.
