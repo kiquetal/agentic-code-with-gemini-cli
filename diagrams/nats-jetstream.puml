@@ -1,0 +1,57 @@
+@startuml NATS JetStream Architecture
+!theme spacelab
+skinparam backgroundColor #f8f9fa
+skinparam classFontColor #000000
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+
+package "Client Applications" {
+  [Publisher]
+  [Subscriber]
+  [Request/Reply]
+}
+
+package "NATS Cluster" {
+  [NATS Server 1]
+  [NATS Server 2]
+  [NATS Server 3]
+}
+
+package "JetStream Layer" {
+  [Accounts]
+  [Streams]
+  [Consumers]
+  [Subjects]
+}
+
+package "Storage Backend" {
+  [RocksDB]
+  [In-Memory Cache]
+}
+
+[Publisher] --> [NATS Server 1]
+[Subscriber] --> [NATS Server 2]
+[Request/Reply] --> [NATS Server 3]
+
+[NATS Server 1] --> [Accounts]
+[NATS Server 2] --> [Streams]
+[NATS Server 3] --> [Consumers]
+
+[Streams] --> [Subjects]
+[Streams] --> [Consumers]
+[Accounts] --> [RocksDB]
+[Streams] --> [In-Memory Cache]
+
+note right of [Streams]
+  Ordered, reliable
+  message storage
+end note
+
+note right of [Consumers]
+  Durable subscriptions
+  Pull/Push modes
+end note
+
+footer Co-authored by kiquetal
+
+@enduml

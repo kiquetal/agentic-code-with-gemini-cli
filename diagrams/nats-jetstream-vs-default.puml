@@ -1,0 +1,57 @@
+@startuml NATS_JetStream_vs_Default
+!theme spacelab
+skinparam backgroundColor #f8f9fa
+skinparam classFontColor #000000
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+skinparam handwritten true
+
+rectangle "NATS Cluster: Default Mode" as default {
+  component "NATS Server 1" as ns1
+  component "NATS Server 2" as ns2
+  component "NATS Server 3" as ns3
+  
+  ns1 -- ns2
+  ns2 -- ns3
+  ns3 -- ns1
+  
+  storage "In-Memory\nMessaging" as mem1
+}
+
+rectangle "NATS Cluster: JetStream Enabled" as jetstream {
+  component "JetStream Server 1" as js1
+  component "JetStream Server 2" as js2
+  component "JetStream Server 3" as js3
+  
+  js1 -- js2
+  js2 -- js3
+  js3 -- js1
+  
+  storage "Persistent\nStream Storage" as store1
+  storage "Stream Replication" as store2
+  storage "Consumer Groups" as store3
+  
+  js1 ==> store1
+  js2 ==> store2
+  js3 ==> store3
+}
+
+note right of default
+  ✓ Request-Reply
+  ✓ Pub-Sub
+  ✗ Persistence
+  ✗ Message Replay
+  ✗ Durability
+end note
+
+note right of jetstream
+  ✓ Persistent Streams
+  ✓ Message Replay
+  ✓ Consumer Groups
+  ✓ Replication
+  ✓ Exactly-Once Delivery
+  ✓ Ordering Guarantees
+end note
+
+footer Co-authored by kiquetal
+@enduml

@@ -3,6 +3,4 @@ dist/
 .env
 .env.local
 *.log
-diagrams/**
-!diagrams/.gitkeep
 .DS_Store
