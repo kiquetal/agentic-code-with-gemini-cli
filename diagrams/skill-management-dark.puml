@@ -1,0 +1,43 @@
+@startuml Skill Management Flow (Dark)
+!theme spacelab
+!option handwritten true
+
+skinparam backgroundColor #212121
+skinparam DefaultFontColor #ffffff
+skinparam textFontColor #ffffff
+skinparam classFontColor #ffffff
+skinparam sequenceActorFontColor #ffffff
+skinparam sequenceParticipantFontColor #ffffff
+skinparam sequenceArrowFontColor #ffffff
+skinparam noteFontColor #ffffff
+skinparam classBorderColor #4285F4
+skinparam arrowColor #4285F4
+
+actor User
+participant "Gemini CLI" as cli
+database "Settings (JSON)" as settings
+participant "Skill Registry" as registry
+
+User -> cli: /skills enable <name>
+activate cli
+
+cli -> settings: Update "enabled" status
+activate settings
+settings --> cli: Success
+deactivate settings
+
+cli -> registry: Load Skill Assets
+activate registry
+registry --> cli: Skill Loaded
+deactivate registry
+
+cli --> User: "Skill <name> enabled successfully"
+deactivate cli
+
+note over User, cli
+  Disabling follows the same flow,
+  but unloads the skill assets.
+end note
+
+footer Co-authored by kiquetal
+@enduml

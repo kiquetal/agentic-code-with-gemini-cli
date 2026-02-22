@@ -116,6 +116,16 @@ footer Co-authored by kiquetal
 - **Description**: Dark-themed sequence diagram showing MCP server registration flow
 - **Purpose**: High-contrast dark mode version of the MCP registration flow
 
+#### Skill Management Diagram
+- **Location**: `/diagrams/skill-management.svg` (SVG) and `/diagrams/skill-management.png` (PNG)
+- **Description**: Sequence diagram showing the flow of enabling/disabling a skill
+- **Purpose**: Illustrates the interaction between the User, Gemini CLI, Settings, and Skill Registry
+
+#### Skill Management Diagram (Dark)
+- **Location**: `/diagrams/skill-management-dark.svg` (SVG) and `/diagrams/skill-management-dark.png` (PNG)
+- **Description**: Dark-themed sequence diagram for skill management
+- **Purpose**: High-contrast dark mode version of the skill management flow
+
 #### Osquery Usage Diagram
 - **Location**: `/diagrams/osquery_usage.svg` (SVG) and `/diagrams/osquery_usage.png` (PNG)
 - **Description**: Architecture diagram explaining how osquery works
